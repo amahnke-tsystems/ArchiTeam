@@ -61,6 +61,12 @@ The "MonitorMe Dashboard Service" subscribes to the "Vital Signal Event Channels
 
 "MonitorMe App" subscribes to the "Notification Event Channel" in order to alert a doctor as soon as possible on his smartpone.
 
-The last component is the "External Data APIs" which is responsible for providing snapshots to MedicalMe when requested by personel and exposes a secured API for MonitorThem (either as normal API or it implements some push mechanism if needed). 
+The "External Data APIs" which is responsible for providing snapshots to MedicalMe when requested by personel and exposes a secured API for MonitorThem (either as normal API or it implements some push mechanism if needed).
+
+A crucial component is the "Analyse Rule Builder" which uses the stored patients signals and some general information about the patient (e.g. age) in order to detect/define rules for alerting. We designed this component to have access to patient information, because we think that age would be a factor that has to be considered in order to define thresholds e.g. for heartrate deviations - babys tends to have a much higher heartrate than older people.
+
+# Architectural Characteristics
+
+
 
  
