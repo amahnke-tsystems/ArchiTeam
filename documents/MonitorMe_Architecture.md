@@ -84,6 +84,25 @@ A crucial component is the "Analyse Rule Builder" which uses the stored patients
 
 # Architectural Characteristics
 
+The Solution design is based on an Event-Driven Architecture, as this provide: 
+
+## Scalability
+The solution is deployed in premises but based on a private cloud and designed to be scalable (initially up to 500 patients), this is achieved by a combination of proprietary devices, software and cloud native technologies.
+
+## Security 
+Based on premises all data is secure and governed by the required medical standards according to the regional area where it is deployed; exposed APIs externally to integrate with  SaaS is through a single point of integration by using an API Gateway. All communications are encoded.
+
+## Reliability
+Services and DBs decomposition allows to have high availability in the solution end to end. It is expected that 8 of the vital signals are monitored separately per specific sensors and data collected independently, see component  ( 3 ) is de-coupled for this specific purposed.
+
+## Performance
+By priorizing Event Driven architecture for NFRs data collection (periodicity) per each of the 8 vital signals, see component 1, the aim is to allow the overall solution to adjust to the dimensioned capacity performance. 
+
+## Elasticity
+The Design is dimensioned based on  the core initial Requirements;  the deployment of microservices (see roles & responsibilities) allow the solution to cope with traffic peaks driven by users (doctors, nurses and other medical staff).
+
+## Atomicity
+Due to requirements to manage and process critital information as vital signals, we proposed decoupling of services and DBs-Intent in order to enable atomicity per transaction . (see Use Cases). 
 
 
  
