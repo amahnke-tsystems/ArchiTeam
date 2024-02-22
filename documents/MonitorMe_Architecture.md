@@ -1,3 +1,10 @@
+# Baseline
+StayHealthy, Inc. is a large and highly successful medical software company based in California, US.
+Their most known and popular products are cloud-based, MonitorThem as data analytics platform, and MyMedicalData as patient medical records used by health professionals.
+
+# Business Goals
+StayHealthy, Inc. would like to provide a new patient monitoring system for hospitals that monitors patient vital signs. The provided solution also contains the proprietary monitoring devices built by StayHealthy, Inc.
+
 # Vision
 We provide a comprehensive, reliable and adaptable software architecture for MonitorMe which allows StayHealthy Inc. to fullfil opportunities in the business of hospitals and medical healthcare.
 
@@ -6,28 +13,28 @@ We provide a comprehensive, reliable and adaptable software architecture for Mon
 ## 1 Collect and Store patients vital signs
 The system has to collect all signs from all monitoring devices, which are:
 
-* Heart rate: every 500ms
-* Blood pressure: every hour
-* Oxygen level: every 5 seconds
-* Blood sugar: every 2 minutes
-* Respiration: every second
-* ECG: every second
-* Body temperature: every 5 minutes
-* Sleep status: every 2 minutes
+* Heart rate: every 0.5s (2 times per second)
+* Blood pressure: every 3600s (1 hour)
+* Oxygen level: every 5s
+* Blood sugar: every 120s
+* Respiration: every 1s
+* ECG: every 1s
+* Body temperature: every 300s (5 minutes)
+* Sleep status: every 120s
 
 These signs have to be persisted for 24 hours for further investigation of medical personel
 
 ## 2 Display latest patient vital signs on Dashboard
-As a nurse or doctor I want to see latest vital signs on a Monitoring-Dashboard in the nurse station. It shows signs from all patients in the respective department, the nurse or doctor is responsable for.
+As a nurse or doctor I want to see latest vital signs on a Monitoring-Dashboard in the nurse station. It shows signs from all patients in the respective department, the nurse or doctor is responsible for.
 
 ## 3 Analyse vitals signs
-The system analyzes vital signs from patitents and detects any critical issues which needs immediate attention by a nurse or doctor in order to prevent the patient of serious harms.
+The system analyses vital signs from patitents and detects any critical issues which needs immediate attention by a nurse or doctor in order to prevent the patient of serious life state change.
 
 ## 4 Alert personel
-As a nurse or doctor, I want to be informed via the MonitorMe Dashboard and the MonitorMe mobile app immediately when an issue was detected.
+As a nurse or doctor, I want to be informed via the MonitorMe Dashboard and the MonitorMe mobile app immediately when an issue was detected by the vital sign analyser.
 
 ## 5 Filter and Review vital signs
-As as medical professional I want to review patients vital signs collected in the last 24 hours. I want to filter these signs by time range and type. 
+As as medical professional I want to review patients vital signs collected in the last 24 hours. I want to filter these signs by time range and type. As per request I want to be able to upload and store the snapshot related to the patient's health records in MyMedicalData.
 
 # Architectural overview
 The architecture is following an event driven style, so the central components are message brokers (e.g. KAFKA, depicted in gray color in the diagram):
