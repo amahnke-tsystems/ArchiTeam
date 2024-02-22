@@ -9,7 +9,9 @@ StayHealthy Inc. would like to provide a new patient monitoring system for hospi
 We provide a comprehensive, reliable and adaptable software architecture for MonitorMe which allows StayHealthy Inc. to fullfil opportunities in the business of hospitals and medical healthcare.
 
 # Context
-The MonitorMe system has some relationships to hardware and software already in stock at StayHealthy, Inc. This context is depicted ![here](../diagrams/kata_actors_components_JA_001.png)
+The MonitorMe system has some relationships to hardware and software already in stock at StayHealthy, Inc. This context is depicted here:
+
+![Context](../diagrams/kata_actors_components_JA_001.png)
 
 # Use Cases
 
@@ -25,22 +27,34 @@ The system has to collect all signs from all monitoring devices, which are:
 * Body temperature: every 300s (5 minutes)
 * Sleep status: every 120s
 
-These signs have to be persisted for 24 hours for further investigation of medical personel. ![Diagram](../diagrams/comm_diag_UC_collect_and_display_signals.png)
+These signs have to be persisted for 24 hours for further investigation of medical personel. 
 
 ## 2 Display latest patient vital signs on Dashboard
-As a nurse or doctor I want to see latest vital signs on a Monitoring-Dashboard in the nurse station. It shows signs from all patients in the respective department, the nurse or doctor is responsible for. ![Diagram](../diagrams/comm_diag_UC_collect_and_display_signals.png)
+As a nurse or doctor I want to see latest vital signs on a Monitoring-Dashboard in the nurse station. It shows signs from all patients in the respective department, the nurse or doctor is responsible for. 
+
+A sequence diagram of the interaction of the involved components from use case 1 and 2 is here:
+
+![Diagram](../diagrams/comm_diag_UC_collect_and_display_signals.png)
 
 ## 3 Analyse vitals signs
-The system analyses vital signs from patitents and detects any critical issues which needs immediate attention by a nurse or doctor in order to prevent the patient of serious life state change. ![Diagram](../diagrams/comm_diag_UC_analyse_and_alert.png)
+The system analyses vital signs from patitents and detects any critical issues which needs immediate attention by a nurse or doctor in order to prevent the patient of serious life state change.
 
 ## 4 Alert personel
-As a nurse or doctor, I want to be informed via the MonitorMe Dashboard and the MonitorMe mobile app immediately when an issue was detected by the vital sign analyser. ![Diagram](../diagrams/comm_diag_UC_analyse_and_alert.png)
+As a nurse or doctor, I want to be informed via the MonitorMe Dashboard and the MonitorMe mobile app immediately when an issue was detected by the vital sign analyser. 
+
+A sequence diagram of the interaction of the involved components from use case 3 and 4 is here:
+
+![Diagram](../diagrams/comm_diag_UC_analyse_and_alert.png)
 
 ## 5 Filter and Review vital signs
 As as medical professional I want to review patients vital signs collected in the last 24 hours. I want to filter these signs by time range and type. As per request I want to be able to upload and store the snapshot related to the patient's health records in MyMedicalData.
 
 # Architectural overview
-The architecture is following an event driven style, so the central components are message brokers (e.g. KAFKA, depicted in gray color in the ![Diagram](../diagrams/architecture_overview.png):
+The architecture is following an event driven style, so the central components are message brokers (e.g. KAFKA). These are depicted in gray color in the overview diagram:
+
+![Diagram](../diagrams/architecture_overview.png):
+
+The two message broker systems are:
 
 * Vital Signal Event Channels
 * Notification Event Channel
