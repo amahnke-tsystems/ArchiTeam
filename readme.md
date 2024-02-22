@@ -11,3 +11,5 @@ The archiv folder can savely be ignored. :-)
 Have fun!
 
 AchiCrew of T-Systems
+
+![Cover image](./diagrams/MonitorMe_PDF_cover.jpg)
